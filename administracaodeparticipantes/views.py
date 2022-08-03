@@ -3,4 +3,4 @@ from .models import CadastrarParticipantes
 
 
 def crud(request):
-    pass
+    
