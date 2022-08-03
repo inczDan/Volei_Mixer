@@ -1,1 +1,1 @@
-web: gunicorn voleimixer.wsgi
+web: gunicorn voleimixer.wsgi --logs-file -
