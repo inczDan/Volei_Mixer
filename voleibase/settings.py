@@ -14,7 +14,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 import django_on_heroku
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -44,9 +43,7 @@ DJANGO_NATIVE_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-INSTALLED_APPS = [
-    DJANGO_NATIVE_APPS + MY_DJANGO_APPS
-]
+INSTALLED_APPS = DJANGO_NATIVE_APPS + MY_DJANGO_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
