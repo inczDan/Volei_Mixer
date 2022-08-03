@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+from dotenv import load_dotenv
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,23 +21,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#4)b39a1cb8g%h$7k(skckdv@c$&ei680ddicw-exdeb2=s4at'
+SECRET_KEY = os.getenv('SECRET_KEY', '2I3U28JI8WUJ82U87YHS7DHGY7@hU8HS7DSH7DS@(#*@&@SDS')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+MY_DJANGO_APPS = [
+    'administracaodeparticipantes',
+]
 
-INSTALLED_APPS = [
+DJANGO_NATIVE_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+INSTALLED_APPS = [
+    DJANGO_NATIVE_APPS + MY_DJANGO_APPS
 ]
 
 MIDDLEWARE = [
