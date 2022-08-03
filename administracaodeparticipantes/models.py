@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class CadastrarParticipantes(models.Model):
+    nome = models.CharField()
+    sobrenome = models.CharField()
+    habilidade = models.IntegerField()
