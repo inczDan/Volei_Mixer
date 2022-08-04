@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 MY_DJANGO_APPS = [
     'administracaodeparticipantes',
+    'home',
 ]
 
 DJANGO_NATIVE_APPS = [
