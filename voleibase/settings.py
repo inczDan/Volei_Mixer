@@ -17,7 +17,7 @@ import django_on_heroku
 
 load_dotenv()
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: BASE_DIR / 'subdkir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
