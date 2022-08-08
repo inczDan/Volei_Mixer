@@ -6,31 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administração</title>
-    <link rel="stylesheet" href="{% static '../staticfiles/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ads.css'%}">
     <style>
+        /* logo header */
         *{
-        margin:0;
-        padding:0;
-        box-sizing: border-box;
-        /* background-color: #ff0778; */
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
         }
         .cabecalho{
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
             width:100%;
-            height:8rem;
-            background-color: #ff0778;
+            height:7rem;
+            background-color: #FF0778;
+       }
+        .logo_image{
+            width:20rem;
+            height:7rem;
         }
+        .text_header{
+            font-size:3rem; 
+            color:#fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }  
+        .section_participantes{
+            background: #fff;
+            height: 60rem;
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            margin-top:2rem;
+            justify-content: center;
+            align-items: center;
+            resize: both;
+            overflow: auto;
+            border:solid 2px #000;
+        }
+
     </style>
 </head>
 <body>
     <header class="cabecalho">
-        <img src="{% static '../staticfiles/images/volei.jpeg' %}">
+        <img src="{% static 'images/volei.jpeg' %}" class="logo_image">
+        <h1 class="text_header">Inimigos do No-Show</h1>
+        <img src="{% static 'images/volei.jpeg' %}" class="logo_image">
     </header>
+<main>
+    <section class="section_adicionar_participantes">
+        <form action="" method="post" placeholder="Pesquise o nome">
+            {% csrf_token %}
+        </form>
+    </section>
+    <section class="section_participantes">
 
-
-    <h1>Administração</h1>
-    <form action="" method="post" placeholder="Pesquise o nome">
-        
-    </form>
-    <a href="/"><button>Inicio</button></a>
+        </h1>
+    </section>
+</main>
+<a href="/"><button>Inicio</button></a>
 </body>
 </html>
