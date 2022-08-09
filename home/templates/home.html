@@ -17,6 +17,7 @@
         <h1 class="title">Inimigos do No-Show</h1>
         <img src="{% static 'images/volei.jpeg'%}" class="logo-volei2" alt="logo-volei">
     </nav>
+    <a href="{% url 'crud.padrao' %}"><button class="botao-adm">Administração</button></a>
     <section class="container">
         <form>
             <fieldset>
@@ -29,7 +30,7 @@
                 </div>
             </fieldset>
         </form>
-        <a href="{% url 'crud.padrao' %}"><button>Administração</button></a>
+        
     </section>
 </body>
 </html>
