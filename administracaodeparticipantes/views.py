@@ -1,6 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
-from .models import CadastrarParticipantes, CadastrarPartipantesForms
+from .models import Participante
+from .forms import CadastrarPartipantesForms
 
 
 def create(request):
@@ -11,7 +12,7 @@ def create(request):
         if not form.is_valid():
             raise RuntimeError("algo errado, arruma esta resposta aqui")
         form.save()
-        context['participantes'] = [p for p in CadastrarParticipantes.objects.all()]
+        context['participantes'] = [p for p in Participante.objects.all()]
 
     context['form'] = CadastrarPartipantesForms()
     return render(request, 'administracao.html', context)
