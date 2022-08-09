@@ -3,14 +3,6 @@ from .models import CadastrarParticipantes
 from django.views.generic.list import ListView
 
 
-class Crud(ListView):
-    model: CadastrarParticipantes
-    template_name = 'administracao.html'
-
-
-    def get_queryset(self):
-        participantes = CadastrarParticipantes.objects.all()
-        context = {
-            'participantes': participantes
-        }
-        return context
+def create(request):
+    playerid = int()
+    return render(request, 'administracao.html')

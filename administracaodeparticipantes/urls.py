@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import Crud
+from . import views
 
 
 urlpatterns = [
-    path('administracao/', Crud.as_view(), name='crud.padrao'),
+    path('administracao/', views.create, name='crud.padrao'),
 ]
