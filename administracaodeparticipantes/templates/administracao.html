@@ -62,7 +62,7 @@
     </section>  
     <section class="section_participantes">
     {% for participante in participantes %}
-        <p>{{ participantes.nome }}</p>
+        <p>{{ participante.nome }}</p>
     {% empty %}
     <h1>Ainda não há participantes</h1>
     {% endfor %}
