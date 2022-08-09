@@ -55,14 +55,17 @@
         <img src="{% static 'images/volei.jpeg' %}" class="logo_image">
     </header>
 <main>
-    <section class="section_adicionar_participantes">
-        <form action="" method="post" placeholder="Pesquise o nome">
+            <!-- <form action="" method="post" placeholder="Pesquise o nome">
             {% csrf_token %}
-        </form>
-    </section>
+        </form> -->
+    <section class="section_adicionar_participantes">
+    </section>  
     <section class="section_participantes">
-
-        </h1>
+    {% for participante in participantes %}
+        <p>{{ participantes.nome }}</p>
+    {% empty %}
+    <h1>Ainda não há participantes</h1>
+    {% endfor %}
     </section>
 </main>
 <a href="/"><button>Inicio</button></a>
