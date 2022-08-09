@@ -1,15 +1,24 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;   
-}
+    box-sizing: border-box;
+    font-family: 'Roboto Serif', serif;
+}    
 .nav-bar{
     width: 100%;
-    height: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background: #f00f79;
+}
+.title{
+    color:#fff;
+    font-size: 5.3rem;
 }
 body {
     background: #ff0778;
 }
-h1{
-    background-color: #FFF;
+.logo-volei, .logo-volei2{
+    width: 23%;
 }

@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css'%}" /> 
     <title>Volei Mixer Buser</title>
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,300&display=swap');
+    </style>
 </head>
 <body>
     <nav class="nav-bar">
-        <img src="{% static 'Downloads/volei.jpeg'%}" alt="logo-volei">
+        <img src="{% static 'images/volei.jpeg'%}" class="logo-volei" alt="logo-volei">
+        <h1 class="title">Inimigos do No-Show</h1>
+        <img src="{% static 'images/volei.jpeg'%}" class="logo-volei2" alt="logo-volei">
     </nav>
+    <section class="container">
+        <form>
+            <fieldset>
+                <legend>Selecione os jogadores a serem sorteados!</legend>
+                <div>
+                    <input type="checkbox" id="jogador" name="player" value="default">
+                    <label>Aqui vai o nome</label>
+                    <input type="checkbox" id="jogador" name="player" value="default">
+                    <label>Aqui vai o nome</label>
+                </div>
+            </fieldset>
+        </form>
+    </section>
 </body>
 </html>
