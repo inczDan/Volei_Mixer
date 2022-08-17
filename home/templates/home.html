@@ -23,10 +23,15 @@
             <fieldset>
                 <legend>Selecione os jogadores a serem sorteados!</legend>
                 <div>
-
-                    <input type="checkbox" id="jogador" name="player" value="default">
-                    <label>Aqui vai o nome</label>
-                    
+                    {% for player in participantes %}
+                        
+                        <input type="checkbox" id="jogador" name="player" value="default">
+                        <p>{{ player.nome }} {{player.sobrenome}} {{player.habilidade}}</p>
+                        
+                    {%endfor%}
+                    {% for time in times %}
+                        {{ time }}<br>
+                    {% endfor %}
                 </div>
             </fieldset>
         </form>

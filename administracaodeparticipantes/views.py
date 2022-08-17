@@ -1,6 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render
-from models import Participante
+from .models import Participante
 from .forms import CadastrarPartipantesForms
 
 def create(request):
