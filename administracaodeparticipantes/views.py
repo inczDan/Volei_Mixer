@@ -1,8 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
-
+from models import Participante
 from .forms import CadastrarPartipantesForms
-from .service import lista_participantes
 
 def create(request):
     context = {}
@@ -12,6 +11,6 @@ def create(request):
             raise RuntimeError("Dados inválidos!")
         form.save()
 
-    context['participantes'] = lista_participantes()
+    context['participantes'] = [p for p in Participante.objects.all()]
     context['form'] = CadastrarPartipantesForms()
     return render(request, 'administracao.html', context)
