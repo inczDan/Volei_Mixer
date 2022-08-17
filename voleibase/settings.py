@@ -46,6 +46,7 @@ DJANGO_NATIVE_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 INSTALLED_APPS = DJANGO_NATIVE_APPS + MY_DJANGO_APPS
 

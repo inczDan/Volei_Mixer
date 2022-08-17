@@ -25,8 +25,9 @@
                 <div>
 
                     <input type="checkbox" id="jogador" name="player" value="default">
-                    <label>Aqui vai o nome</label>
-                    
+                    {% for player in context %}
+                    <label>{{ player.nome }}</label>
+                    {% endfor %}
                 </div>
             </fieldset>
         </form>

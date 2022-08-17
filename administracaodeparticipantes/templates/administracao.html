@@ -70,7 +70,7 @@
 
             <p>Participantes</p>
             {% for participante in participantes %}
-                <p>{{ participante.nome }} ({{participante.habilidade_str}})</p>
+                <p>{{ participante.nome }}{{participante.sobrenome}} ({{participante.habilidade}})</p>
             {% endfor %}
         </div>
     </section>
