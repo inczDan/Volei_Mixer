@@ -30,7 +30,8 @@
                         
                     {%endfor%}
                     {% for time in times %}
-                        {{ time }}<br>
+                        <h1>TIME {{ forloop.counter }}</h1>
+                        {{ time }}
                     {% endfor %}
                 </div>
             </fieldset>
