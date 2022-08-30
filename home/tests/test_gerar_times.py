@@ -136,3 +136,50 @@ def test_que_montar_time_com_12(db):
         ('Jogador-9', 4),
     ]
 
+
+def test_que_montar_time_com_11(db):
+    ## Dado 24 participantes
+    habilidades = {
+        'Jogador-1': 1,
+        'Jogador-2': 2,
+        'Jogador-3': 3,
+        'Jogador-4': 4,
+        'Jogador-5': 1,
+        'Jogador-6': 2,
+        'Jogador-7': 3,
+        'Jogador-8': 4,
+        'Jogador-9': 4,
+        'Jogador-10': 3,
+        'Jogador-11': 3,
+    }
+
+
+    for jogador in range(11):
+        jogador_nro = jogador + 1
+        jogador_tag = f'Jogador-{jogador_nro}'
+        Participante.objects.create(
+            nome=jogador_tag, sobrenome=str(jogador_nro),
+            habilidade=habilidades.get(jogador_tag))
+
+    # Quando chamamos o montador de time
+    jogadores = Participante.objects.all().values('nome', 'sobrenome', 'habilidade')
+    times = gerador_times.montar_time(jogadores, aleatoriedade=42)
+
+    time1, time2 = times
+    assert len(times) == 2
+
+    assert time1 == [
+      ('Jogador-1', 1),
+      ('Jogador-6', 2),
+      ('Jogador-3', 3),
+      ('Jogador-10', 3),
+      ('Jogador-8', 4),
+      ('Jogador-9', 4)]
+
+    assert time2 == [
+      ('Jogador-5', 1),
+      ('Jogador-2', 2),
+      ('Jogador-7', 3),
+      ('Jogador-11', 3),
+      ('Jogador-4', 4),
+      ('👻', 5)]
