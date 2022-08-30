@@ -18,14 +18,14 @@
         <img src="{% static 'images/volei.jpeg'%}" class="logo-volei2" alt="logo-volei">
     </nav>
     <a href="{% url 'crud.padrao' %}"><button class="botao-adm">Administração</button></a>
-    <section class="container">
-        <form>
+    <section class="container" style="padding: 20px;">
+        <form method="POST"> {% csrf_token %}
             <fieldset>
                 <legend>Selecione os jogadores a serem sorteados!</legend>
                 <div>
                     {% for player in participantes %}
                         
-                        <input type="checkbox" id="jogador" name="player" value="default">
+                        <input type="checkbox" id="jogador" name="players" value="{{ player.id }}">
                         <p>{{ player.nome }} {{player.sobrenome}} {{player.habilidade}}</p>
                         
                     {%endfor%}
@@ -35,6 +35,7 @@
                     {% endfor %}
                 </div>
             </fieldset>
+            <input type="submit" value="Gerar Times">
         </form>
         
     </section>

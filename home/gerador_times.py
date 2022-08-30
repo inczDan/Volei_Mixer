@@ -10,6 +10,7 @@ import random
 def montar_time(participantes, aleatoriedade=None):
 
     numero_times = round(len(participantes)/6)
+    print('--------->1', numero_times)
     # travas:
     # - menos que 8 gera mensagem de erro
     # - teste com 11, auto completar até chegar em multiplo de 6
