@@ -9,6 +9,12 @@ def test_tem_que_falhar():
         result = 1 / 0
     assert 'division by zero' in str(execution.value)
 
+def criar_participantes(numeroDeJogadores, habilidades):
+    for jogador in range(numeroDeJogadores):
+        nro_jogadores = jogador + 1
+        jogador_tag = f'Jogador-{nro_jogadores}'
+        Participante.objects.create(nome=jogador_tag, sobrenome=str(nro_jogadores), habilidade=habilidades.get(jogador_tag))
+
 
 def test_que_montar_time(db):
     ## Dado 24 participantes
@@ -38,13 +44,8 @@ def test_que_montar_time(db):
         'Jogador-21': 4,
         'Jogador-23': 4,
     }
+    criar_participantes(len(habilidades), habilidades)
 
-    for jogador in range(24):
-        jogador_nro = jogador + 1
-        jogador_tag = f'Jogador-{jogador_nro}'
-        Participante.objects.create(
-            nome=jogador_tag, sobrenome=str(jogador_nro),
-            habilidade=habilidades.get(jogador_tag))
 
     #Quando montamos times
     jogadores = participantes = Participante.objects.all().values('nome', 'sobrenome', 'habilidade')
@@ -103,14 +104,8 @@ def test_que_montar_time_com_12(db):
         'Jogador-11': 3,
         'Jogador-12': 3,
     }
+    criar_participantes(len(habilidades), habilidades)
 
-
-    for jogador in range(12):
-        jogador_nro = jogador + 1
-        jogador_tag = f'Jogador-{jogador_nro}'
-        Participante.objects.create(
-            nome=jogador_tag, sobrenome=str(jogador_nro),
-            habilidade=habilidades.get(jogador_tag))
 
     jogadores = Participante.objects.all().values('nome', 'sobrenome', 'habilidade')
     times = gerador_times.montar_time(jogadores, aleatoriedade=42)
@@ -152,14 +147,8 @@ def test_que_montar_time_com_11(db):
         'Jogador-10': 3,
         'Jogador-11': 3,
     }
+    criar_participantes(len(habilidades), habilidades)
 
-
-    for jogador in range(11):
-        jogador_nro = jogador + 1
-        jogador_tag = f'Jogador-{jogador_nro}'
-        Participante.objects.create(
-            nome=jogador_tag, sobrenome=str(jogador_nro),
-            habilidade=habilidades.get(jogador_tag))
 
     # Quando chamamos o montador de time
     jogadores = Participante.objects.all().values('nome', 'sobrenome', 'habilidade')
